@@ -43,11 +43,9 @@ LangGraph provides low-level supporting infrastructure for any long-running, sta
 https://pypi.org/project/langchain-community/ \
 LangChain Community contains third-party integrations that implement the base interfaces defined in LangChain Core, making them ready-to-use in any LangChain application.
 
-#### langchain-text-splitters
-https://pypi.org/project/langchain-text-splitters/ \
-LangChain Text Splitters contains utilities for splitting into chunks a wide variety of text documents.
-
 #### langchain-classic
+https://pypi.org/project/langchain-classic/
+Legacy chains, langchain-community re-exports, indexing API, deprecated functionality, and more.
 
 #### langchain-ollama
 https://pypi.org/project/langchain-ollama/ \
