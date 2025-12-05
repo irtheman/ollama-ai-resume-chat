@@ -1,11 +1,14 @@
 from resume_agent import ResumeAgent
 import streamlit as st
+import os
 
 def update_resume():
-    resume = st.file_uploader("Upload a PDF resume", type="pdf", accept_multiple_files=False)
+    resume = st.file_uploader("Upload a new PDF resume", type="pdf", accept_multiple_files=False)
     if resume is not None:
         with open("./resume.pdf", mode='wb') as w:
             w.write(resume.getvalue())
+        return True
+    elif os.path.isfile("./resume.pdf"):
         return True
     return False
 
@@ -22,6 +25,10 @@ def check_form_state():
         st.error("Choose a chat option!")
         return False
     
+    if not st.session_state.agent:
+        st.error("AI Agent isn't loaded!")
+        return False
+
     st.session_state.start_chat = True
     return True
 
